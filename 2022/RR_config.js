@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "title":"Phantom Catz Scouting PASS",
+  "title":"Scouting PASS",
   "page_title":"Rapid React",
   "elements":{
     "prematch": {
