@@ -65,7 +65,7 @@ var config_data = `
           "st":"Top<br>",
           "sm":"Middle<br>",
           "sb":"Bottom"
-		    }
+	}
       }
     },
     "auton": {
