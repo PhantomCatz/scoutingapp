@@ -60,8 +60,12 @@ var config_data = `
       "Auto Start Position": {
         "code":"as",
         "title": "Auto Start Position",
-        "type":"field_image",
-        "filename":"2022/field_image.png"
+        "type":"radio",
+        "choices":{
+          "st":"Top<br>",
+          "sm":"Middle<br>",
+          "sb":"Bottom"
+		    }
       }
     },
     "auton": {
@@ -80,10 +84,15 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Auto Aquired Cargo": {
-        "code":"ac",
-        "title": "Picked up more cargo?",
-        "type":"bool"
+      "Upper Cargo Attempts": {
+        "code":"aca",
+        "title": "Upper Cargo Attempts",
+        "type":"counter"
+      },
+	  "Lower Cargo Attempts": {
+        "code":"ala",
+        "title": "Lower Cargo Attempsts",
+        "type":"counter"
       }
     },
     "teleop": {
@@ -97,13 +106,13 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Upper Cargo Missed": {
-        "code":"tm",
+      "Upper Cargo Attempts": {
+        "code":"tua",
         "title": "Uppoer Cargo Missed",
         "type":"counter"
       },
-      "Lower Cargo Missed": {
-        "code":"tn",
+      "Lower Cargo Attempts": {
+        "code":"tla",
         "title": "Lower Cargo Missed",
         "type":"counter"
       },
@@ -112,23 +121,16 @@ var config_data = `
         "title": "Was Defended",
         "type":"bool"
       },
-      "Cargo Loading": {
-        "code":"cl",
-        "title": "Pick up Cargo where",
-        "type":"radio",
-        "choices":{
-          "t":"Terminal<br>",
-          "g":"Ground<br>",
-          "b":"Both<br>",
-          "x":"Not Attempted"
-        },
-        "defaultValue":"x"
-      },
       "Shooting Spot": {
         "code":"ss",
         "title": "Shooting Spot",
-        "type":"field_image",
-        "filename":"2022/field_image.png"
+        "type":"radio",
+        "choices":{
+          "lb":"Launch Bay<br>",
+          "tr":"Tarmac<br>",
+          "fn":"Fender<br>",
+          "ot":"Other"
+        }
       }
     },
     "endgame": {
@@ -137,65 +139,86 @@ var config_data = `
         "title": "Climb",
         "type":"radio",
         "choices":{
+          "0":"Not Attempted<br>",
           "1":"Low<br>",
           "2":"Mid<br>",
           "3":"High<br>",
           "4":"Traversal<br>",
-          "f":"Attempted but Failed<br>",
-          "x":"Not Attempted"
+          "f":"Attempted but Failed"
         },
-        "defaultValue":"x"
+        "defaultValue":"0"
       },
-      "Started Climb before Endgame": {
-        "code":"be",
-        "title": "Started climb before EndGame",
-        "type":"bool"
-      },
-      "Num of Robots Climbed": {
-        "code":"cn",
-        "title": "# of alliance bots climbed",
-        "type":"counter"
-      }
+	  "Climb Time (Seconds)": {
+		"code":"ct",
+		"title":"How quickly robot climbed",
+		"type":"number",
+		"min":1,
+        "max":100
+	  }
     },
     "postmatch": {
-      "Driver Skill": {
-        "code":"ds",
-        "title": "Driver Skill",
+      "Pushing Capability": {
+        "code":"pc",
+        "title": "Pushing Capability",
         "type":"radio",
         "choices":{
-          "n":"Not Effective<br>",
-          "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Not Observed"
-        },
-        "defaultValue":"x"
+          "p1":"1<br>",
+          "p2":"2<br>",
+          "p3":"3<br>",
+          "p4":"4<br>",
+		      "p5":"5"
+        }
       },
-      "Defense Rating": {
-        "code":"dr",
-        "title": "Defense Rating",
+      "Counter-Defense<br>Maneuverability": {
+        "code":"cd",
+        "title": "Counter-Defense Maneuverability",
         "type":"radio",
         "choices":{
-          "n":"Not Effective<br>",
-          "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Not Observed"
-        },
-        "defaultValue":"x"
+          "d1":"1<br>",
+          "d2":"2<br>",
+          "d3":"3<br>",
+          "d4":"4<br>",
+		      "d5":"5"
+        }
       },
-      "Died": {
+      "Offensive<br>Maneuverability": {
+        "code":"om",
+        "title": "Offensive Maneuverability",
+        "type":"radio",
+        "choices":{
+          "o1":"1<br>",
+          "o2":"2<br>",
+          "o3":"3<br>",
+          "o4":"4<br>",
+		      "o5":"5"
+        }
+      },
+	    "Hoarding": {
+		    "code":"hd",
+		    "title":"Hoarding",
+		    "type":"bool"
+	    },
+	    "Intake Speed": {
+		    "code":"is",
+		    "title":"Scaled Intake Speed",
+		    "type":"radio",
+		    "choices":{
+			  "s1":"1<br>",
+			  "s2":"2<br>",
+			  "s3":"3"
+		  }
+	  },
+      "Robot Died": {
         "code":"d",
-        "title": "Died",
+        "title": "Robot Died",
         "type":"bool"
       },
-      "Tipped": {
-        "code":"to",
-        "title": "Tipped Over",
-        "type":"bool"
-      },
-      "Card Foul": {
-        "code":"cf",
-        "title": "Yellow/Red Card",
-        "type":"bool"
+      "Penalties Incurred": {
+        "code":"pi",
+        "title": "Penalties incurred",
+        "type":"text",
+		    "size":15,
+		    "maxSize":50
       },
       "Comments": {
         "code":"co",
