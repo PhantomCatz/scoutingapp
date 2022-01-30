@@ -154,7 +154,7 @@ var config_data = `
 		"type":"number",
 		"min":1,
         "max":100
-	  }
+	}
     },
     "postmatch": {
       "Pushing Capability": {
