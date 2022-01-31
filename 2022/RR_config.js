@@ -60,12 +60,8 @@ var config_data = `
       "Auto Start Position": {
         "code":"as",
         "title": "Auto Start Position",
-        "type":"radio",
-        "choices":{
-          "st":"Top<br>",
-          "sm":"Middle<br>",
-          "sb":"Bottom"
-	}
+        "type":"field_image",
+        "filename":"2022/field_image.png"
       }
     },
     "auton": {
