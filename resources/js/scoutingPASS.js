@@ -452,6 +452,17 @@ function validateLevel() {
 	}
 }
 
+function validatePosition() {
+	if (document.getElementById("input_l_qm").checked ||
+		document.getElementById("input_l_ef").checked ||
+		document.getElementById("input_l_qf").checked
+	) {
+		return true
+	} else {
+		return false
+	}
+}
+
 function validateData() {
 	var ret = true
 	var errStr = "Bad fields: ";
@@ -467,14 +478,18 @@ function validateData() {
 				errStr += rf + " "
 				ret = false
 			}
-		// Normal validation (length <> 0)
-		} else if (document.getElementById("input_"+rf).value.length == 0) {
-			errStr += rf + " "
-			ret = false
+		} else if (rf == "as") {
+			if (!validatePosition()) {
+				errStr += rf + " "
+				ret = false
+			} 
+		} else if (document.getElementById("input_m").value.length == 0) {
+				errStr += rf + " "
+				ret = false
 		}
 	}
 	if (ret == false) {
-		alert("Enter all required values\n"+errStr);
+		alert("Enter all required values (This show wrong values please fill the blank fields)\n"+errStr);
 	}
 	return ret
 }
