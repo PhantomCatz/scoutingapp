@@ -60,8 +60,13 @@ var config_data = `
       "Auto Start Position": {
         "code":"as",
         "title": "Auto Start Position",
-        "type":"field_image",
-        "filename":"2022/field_image.png"
+        "type":"radio",
+        "choices":{
+          "st":"Top<br>",
+          "sm":"Middle<br>",
+          "sb":"Bottom"
+	},
+	"required":"true"
       }
     },
     "auton": {
@@ -150,7 +155,7 @@ var config_data = `
 		"type":"number",
 		"min":1,
         "max":100
-	}
+	  }
     },
     "postmatch": {
       "Pushing Capability": {
@@ -162,7 +167,7 @@ var config_data = `
           "p2":"2<br>",
           "p3":"3<br>",
           "p4":"4<br>",
-		      "p5":"5"
+		  "p5":"5"
         }
       },
       "Counter-Defense<br>Maneuverability": {
@@ -174,7 +179,7 @@ var config_data = `
           "d2":"2<br>",
           "d3":"3<br>",
           "d4":"4<br>",
-		      "d5":"5"
+		  "d5":"5"
         }
       },
       "Offensive<br>Maneuverability": {
@@ -186,23 +191,23 @@ var config_data = `
           "o2":"2<br>",
           "o3":"3<br>",
           "o4":"4<br>",
-		      "o5":"5"
+		  "o5":"5"
         }
       },
-	    "Hoarding": {
-		    "code":"hd",
-		    "title":"Hoarding",
-		    "type":"bool"
-	    },
-	    "Intake Speed": {
-		    "code":"is",
-		    "title":"Scaled Intake Speed",
-		    "type":"radio",
-		    "choices":{
-			  "s1":"1<br>",
-			  "s2":"2<br>",
-			  "s3":"3"
-		  }
+	  "Hoarding": {
+		"code":"hd",
+		"title":"Hoarding",
+		"type":"bool"
+	  },
+	  "Intake Speed": {
+		"code":"is",
+		"title":"Scaled Intake Speed",
+		"type":"radio",
+		"choices":{
+			"s1":"1<br>",
+			"s2":"2<br>",
+			"s3":"3"
+		}
 	  },
       "Robot Died": {
         "code":"d",
@@ -213,8 +218,8 @@ var config_data = `
         "code":"pi",
         "title": "Penalties incurred",
         "type":"text",
-		    "size":15,
-		    "maxSize":50
+		"size":15,
+		"maxSize":50
       },
       "Comments": {
         "code":"co",
