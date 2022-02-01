@@ -194,21 +194,26 @@ var config_data = `
 		  "o5":"5"
         }
       },
-	  "Hoarding": {
-		"code":"hd",
-		"title":"Hoarding",
-		"type":"bool"
-	  },
-	  "Intake Speed": {
-		"code":"is",
-		"title":"Scaled Intake Speed",
-		"type":"radio",
-		"choices":{
-			"s1":"1<br>",
-			"s2":"2<br>",
-			"s3":"3"
-		}
-	  },
+	"Hoarding": {
+	  "code":"hd",
+	  "title":"Hoarding",
+	  "type":"radio",
+	  "choices":{
+	    "h1":"1<br>",
+            "h2":"2<br>",
+            "h3":"3"
+	}
+      },
+	"Intake Speed": {
+	  "code":"is",
+	  "title":"Scaled Intake Speed",
+	  "type":"radio",
+	  "choices":{
+	    "s1":"1<br>",
+	    "s2":"2<br>",
+	    "s3":"3"
+	}
+      },
       "Robot Died": {
         "code":"d",
         "title": "Robot Died",
