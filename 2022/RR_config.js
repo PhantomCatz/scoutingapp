@@ -226,6 +226,11 @@ var config_data = `
 		"size":15,
 		"maxSize":50
       },
+      "Number of Penalties Incurred": {
+        "code":"npi",
+        "title": "Number of Penalties incurred",
+        "type":"counter"
+      },
       "Comments": {
         "code":"co",
         "title": "Comments",
