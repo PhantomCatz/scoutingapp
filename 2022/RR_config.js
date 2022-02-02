@@ -163,11 +163,11 @@ var config_data = `
         "title": "Pushing Capability",
         "type":"radio",
         "choices":{
-          "p1":"1<br>",
-          "p2":"2<br>",
-          "p3":"3<br>",
-          "p4":"4<br>",
-		  "p5":"5"
+          "1":"1<br>",
+          "2":"2<br>",
+          "3":"3<br>",
+          "4":"4<br>",
+		  "5":"5"
         }
       },
       "Counter-Defense<br>Maneuverability": {
@@ -175,11 +175,11 @@ var config_data = `
         "title": "Counter-Defense Maneuverability",
         "type":"radio",
         "choices":{
-          "d1":"1<br>",
-          "d2":"2<br>",
-          "d3":"3<br>",
-          "d4":"4<br>",
-		  "d5":"5"
+          "1":"1<br>",
+          "2":"2<br>",
+          "3":"3<br>",
+          "4":"4<br>",
+		  "5":"5"
         }
       },
       "Offensive<br>Maneuverability": {
@@ -187,10 +187,10 @@ var config_data = `
         "title": "Offensive Maneuverability",
         "type":"radio",
         "choices":{
-          "o1":"1<br>",
-          "o2":"2<br>",
-          "o3":"3<br>",
-          "o4":"4<br>",
+          "1":"1<br>",
+          "2":"2<br>",
+          "3":"3<br>",
+          "4":"4<br>",
 		  "o5":"5"
         }
       },
@@ -199,9 +199,9 @@ var config_data = `
 	  "title":"Hoarding",
 	  "type":"radio",
 	  "choices":{
-	    "h1":"1<br>",
-            "h2":"2<br>",
-            "h3":"3"
+	    "1":"1<br>",
+            "2":"2<br>",
+            "3":"3"
 	}
       },
 	"Intake Speed": {
@@ -209,9 +209,9 @@ var config_data = `
 	  "title":"Scaled Intake Speed",
 	  "type":"radio",
 	  "choices":{
-	    "s1":"1<br>",
-	    "s2":"2<br>",
-	    "s3":"3"
+	    "1":"1<br>",
+	    "2":"2<br>",
+	    "3":"3"
 	}
       },
       "Robot Died": {
