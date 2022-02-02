@@ -226,10 +226,10 @@ var config_data = `
 		"size":15,
 		"maxSize":50
       },
-      "Number of Penalties Incurred": {
-        "code":"npi",
-        "title": "Number of Penalties incurred",
-        "type":"counter"
+      "# of Penalties Incurred": {
+        "code":"np",
+	"title": "Number of penalties incurred",
+	"type":"counter"
       },
       "Comments": {
         "code":"co",
