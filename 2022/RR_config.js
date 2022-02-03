@@ -140,12 +140,11 @@ var config_data = `
         "title": "Climb",
         "type":"radio",
         "choices":{
-          "0":"Not Attempted<br>",
+          "0":"Not Attempted/Failed<br>",
           "1":"Low<br>",
           "2":"Mid<br>",
           "3":"High<br>",
-          "4":"Traversal<br>",
-          "f":"Attempted but Failed"
+          "4":"Traversal",
         },
         "defaultValue":"0"
       },
