@@ -76,7 +76,7 @@ var config_data = `
         "type":"radio",
         "choices":{
           "Y":"Yes<br>",
-          "N":"No",
+          "N":"No<br>",
         }
       },
       "Upper Cargo Scored": {
