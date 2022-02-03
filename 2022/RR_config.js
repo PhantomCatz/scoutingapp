@@ -70,10 +70,14 @@ var config_data = `
       }
     },
     "auton": {
-      "Taxi": {
-        "code":"at",
-        "title": "Taxied?",
-        "type":"bool"
+       "Taxi": {
+        "code":"tx",
+        "title": "Taxi",
+        "type":"radio",
+        "choices":{
+          "Y":"Yes<br>",
+          "N":"No",
+        }
       },
       "Upper Cargo Scored": {
         "code":"au",
