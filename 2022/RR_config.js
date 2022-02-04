@@ -119,6 +119,7 @@ var config_data = `
 	"choices":{
 	  "Y":"Yes<br>",
 	  "N":"No"
+		}
       },
       "Shooting Spot": {
         "code":"ss",
@@ -152,7 +153,7 @@ var config_data = `
 		"type":"number",
 		"min":1,
         "max":100
-	  }
+	}
     },
     "postmatch": {
       "Pushing Capability": {
@@ -218,6 +219,7 @@ var config_data = `
 	"choices":{
 	  "Y":"Yes<br>",
 	  "N":"No"
+	}
       },
       "Penalties Incurred": {
         "code":"pi",
