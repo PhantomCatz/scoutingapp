@@ -44,7 +44,7 @@ function addCounter(table, idx, name, data){
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
-  inp.setAttribute("size", 2);
+  inp.setAttribute("size", 7);
   inp.setAttribute("maxLength", 2);
   cell2.appendChild(inp);
 
