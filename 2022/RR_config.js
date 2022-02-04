@@ -70,15 +70,6 @@ var config_data = `
       }
     },
     "auton": {
-       "Taxi": {
-        "code":"tx",
-        "title": "Taxi",
-        "type":"radio",
-        "choices":{
-          "Y":"Yes<br>",
-          "N":"No<br>",
-        }
-      },
       "Upper Cargo Scored": {
         "code":"au",
         "title": "Uppoer Cargo Scored",
@@ -124,7 +115,10 @@ var config_data = `
       "Was Defended": {
         "code":"wd",
         "title": "Was Defended",
-        "type":"bool"
+        "type":"radio",
+	"choices":{
+	  "Y":"Yes<br>",
+	  "N":"No"
       },
       "Shooting Spot": {
         "code":"ss",
@@ -148,7 +142,7 @@ var config_data = `
           "1":"Low<br>",
           "2":"Mid<br>",
           "3":"High<br>",
-          "4":"Traversal",
+          "4":"Traversal"
         },
         "defaultValue":"0"
       },
@@ -220,7 +214,10 @@ var config_data = `
       "Robot Died": {
         "code":"d",
         "title": "Robot Died",
-        "type":"bool"
+	"type":"radio",
+	"choices":{
+	  "Y":"Yes<br>",
+	  "N":"No"
       },
       "Penalties Incurred": {
         "code":"pi",
