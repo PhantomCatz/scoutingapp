@@ -18,24 +18,18 @@ var config_data = `
         "required":"true",
         "disabled":"true"
       },
-      "Match Level":{
-        "code":"l",
-        "type":"level",
-        "choices":{
-          "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
-        },
-        "defaultValue":"qm",
-        "required":"true"
-      },
       "Team #": {
         "code":"t",
         "type":"team",
         "min":1,
         "max":99999
+      },
+      "Match #":{
+        "code":"m",
+        "type":"match",
+        "min":1,
+        "max":100,
+        "required":"true"
       },
      "Robot": {
         "code":"r",
@@ -50,11 +44,17 @@ var config_data = `
         },
         "required":"true"
       },
-      "Match #":{
-        "code":"m",
-        "type":"match",
-        "min":1,
-        "max":100,
+      "Match Level":{
+        "code":"l",
+        "type":"level",
+        "choices":{
+          "qm":"Quals<br>",
+          "ef":"Eighth-Final<br>",
+          "qf":"Quarter-Final<br>",
+          "sf":"Semi-Final<br>",
+          "f":"Final"
+        },
+        "defaultValue":"qm",
         "required":"true"
       },
       "Auto Start Position": {
