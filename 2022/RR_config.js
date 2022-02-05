@@ -131,31 +131,7 @@ var config_data = `
           "fn":"Fender<br>",
           "ot":"Other"
         }
-      }
-    },
-    "endgame": {
-      "Climb": {
-        "code":"c",
-        "title": "Climb",
-        "type":"radio",
-        "choices":{
-          "0":"Not Attempted/Failed<br>",
-          "1":"Low<br>",
-          "2":"Mid<br>",
-          "3":"High<br>",
-          "4":"Traversal"
-        },
-        "defaultValue":"0"
       },
-	  "Climb Time (Seconds)": {
-		"code":"ct",
-		"title":"How quickly robot climbed",
-		"type":"number",
-		"min":1,
-        "max":100
-	}
-    },
-    "postmatch": {
       "Pushing Capability": {
         "code":"pc",
         "title": "Pushing Capability",
@@ -211,7 +187,31 @@ var config_data = `
 	    "2":"2<br>",
 	    "3":"3"
 	}
+      }
+    },
+    "endgame": {
+      "Climb": {
+        "code":"c",
+        "title": "Climb",
+        "type":"radio",
+        "choices":{
+          "0":"Not Attempted/Failed<br>",
+          "1":"Low<br>",
+          "2":"Mid<br>",
+          "3":"High<br>",
+          "4":"Traversal"
+        },
+        "defaultValue":"0"
       },
+	  "Climb Time (Seconds)": {
+		"code":"ct",
+		"title":"How quickly robot climbed",
+		"type":"number",
+		"min":1,
+        "max":100
+	}
+    },
+    "postmatch": {
       "Robot Died": {
         "code":"d",
         "title": "Robot Died",
