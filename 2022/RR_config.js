@@ -31,12 +31,11 @@ var config_data = `
         "defaultValue":"qm",
         "required":"true"
       },
-      "Match #":{
-        "code":"m",
-        "type":"match",
+      "Team #": {
+        "code":"t",
+        "type":"team",
         "min":1,
-        "max":100,
-        "required":"true"
+        "max":99999
       },
      "Robot": {
         "code":"r",
@@ -51,11 +50,12 @@ var config_data = `
         },
         "required":"true"
       },
-      "Team #": {
-        "code":"t",
-        "type":"team",
+      "Match #":{
+        "code":"m",
+        "type":"match",
         "min":1,
-        "max":99999
+        "max":100,
+        "required":"true"
       },
       "Auto Start Position": {
         "code":"as",
