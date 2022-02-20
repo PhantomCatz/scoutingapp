@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "title":"Scouting PASS",
+  "title":"Phantom Catz Scouting App 2022",
   "page_title":"Rapid React",
   "elements":{
     "prematch": {
