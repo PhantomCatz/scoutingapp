@@ -55,7 +55,7 @@ var config_data = `
           "f":"Final"
         },
         "defaultValue":"qm",
-        "required":"true"
+        "required":"false"
       },
       "Auto Start Position": {
         "code":"as",
@@ -66,7 +66,8 @@ var config_data = `
           "sm":"Middle<br>",
           "sb":"Bottom"
 	},
-	"required":"true"
+	"defaultValue":"st",
+	"required":"false"
       }
     },
     "auton": {
