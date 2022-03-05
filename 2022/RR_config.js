@@ -141,8 +141,7 @@ var config_data = `
           "1":"1<br>",
           "2":"2<br>",
           "3":"3<br>",
-          "4":"4<br>",
-		  "5":"5"
+          "4":"4"
         }
       },
       "Counter-Defense<br>Maneuverability": {
@@ -153,9 +152,7 @@ var config_data = `
           "1":"1<br>",
           "2":"2<br>",
           "3":"3<br>",
-          "4":"4<br>",
-		  "5":"5"
-        }
+          "4":"4"
       },
       "Offensive<br>Maneuverability": {
         "code":"om",
@@ -165,8 +162,7 @@ var config_data = `
           "1":"1<br>",
           "2":"2<br>",
           "3":"3<br>",
-          "4":"4<br>",
-		  "5":"5"
+          "4":"4"
         }
       },
 	"Hoarding": {
