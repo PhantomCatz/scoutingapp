@@ -153,6 +153,7 @@ var config_data = `
           "2":"2<br>",
           "3":"3<br>",
           "4":"4"
+	}
       },
       "Offensive<br>Maneuverability": {
         "code":"om",
