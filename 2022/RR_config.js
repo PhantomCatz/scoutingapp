@@ -225,7 +225,7 @@ var config_data = `
         "title": "Penalties incurred",
         "type":"text",
 		"size":15,
-		"maxSize":50
+		"maxSize":9999
       },
       "# of Penalties Incurred": {
         "code":"np",
@@ -237,7 +237,7 @@ var config_data = `
         "title": "Comments",
         "type":"text",
         "size":15,
-        "maxSize":50
+        "maxSize":9999
       }
     }
   }
