@@ -16,7 +16,7 @@ var config_data = `
         "type":"event",
         "defaultValue":"2022caph",
         "required":"true",
-        "disabled":"true"
+        "disabled":"false"
       },
       "Team #": {
         "code":"t",
