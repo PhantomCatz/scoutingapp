@@ -14,8 +14,9 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022",
-        "required":"true"
+        "defaultValue":"2022cave",
+        "required":"true",
+	"disabled":"true"
       },
       "Team #": {
         "code":"t",
