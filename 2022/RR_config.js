@@ -184,10 +184,10 @@ var config_data = `
         "type":"radio",
         "choices":{
           "0":"Not Attempted/Failed<br>",
-          "1":"Low<br>",
-          "2":"Mid<br>",
-          "3":"High<br>",
-          "4":"Traversal"
+          "4":"Low<br>",
+          "6":"Mid<br>",
+          "10":"High<br>",
+          "15":"Traversal"
         },
         "defaultValue":"0"
       },
