@@ -211,7 +211,7 @@ var config_data = `
 	  "Climb Time (Seconds)": {
 		"code":"ct",
 		"title":"How quickly robot climbed",
-		"type":"number",
+		"type":"time",
 		"min":1,
         "max":100
 	}
