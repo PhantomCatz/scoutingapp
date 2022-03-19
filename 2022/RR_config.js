@@ -7,7 +7,7 @@ var config_data = `
       "Scouter Initials": {
         "code":"s",
         "type":"scouter",
-        "size":5,
+        "size":7,
         "maxSize":5,
         "required":"true"
       },
