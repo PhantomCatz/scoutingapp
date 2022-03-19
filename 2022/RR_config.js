@@ -80,7 +80,17 @@ var config_data = `
         "title": "Lower Cargo Attempsts",
         "type":"counter"
       }
-    },
+	  "Taxi": {
+	    "code":"tx",
+	    "title":"Taxi",
+	    "type":"radio",
+	    "choices":{
+		"0":"No<br>",
+		"2":"Yes"
+	},
+		  "defaultValue":"0"
+      }
+     },
     "teleop": {
       "Upper Cargo Scored": {
         "code":"tu",
