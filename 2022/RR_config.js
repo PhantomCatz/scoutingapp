@@ -56,18 +56,6 @@ var config_data = `
         },
         "defaultValue":"qm",
         "required":"false"
-      },
-      "Auto Start Position": {
-        "code":"as",
-        "title": "Auto Start Position",
-        "type":"radio",
-        "choices":{
-          "st":"Top<br>",
-          "sm":"Middle<br>",
-          "sb":"Bottom"
-	},
-	"defaultValue":"st",
-	"required":"false"
       }
     },
     "auton": {
