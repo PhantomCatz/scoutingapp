@@ -60,6 +60,16 @@ var config_data = `
       }
     },
     "auton": {
+      "Taxi": {
+	"code":"tx",
+	"title":"Taxi",
+	"type":"radio",
+	"choices":{
+	  "0":"No<br>",
+	  "2":"Yes"
+	},
+	"defaultValue":"0"
+      },
       "Upper Cargo Scored": {
         "code":"au",
         "title": "Uppoer Cargo Scored",
@@ -79,16 +89,6 @@ var config_data = `
         "code":"ala",
         "title": "Lower Cargo Attempsts",
         "type":"counter"
-      }
-	  "Taxi": {
-	    "code":"tx",
-	    "title":"Taxi",
-	    "type":"radio",
-	    "choices":{
-		"0":"No<br>",
-		"2":"Yes"
-	},
-		  "defaultValue":"0"
       }
      },
     "teleop": {
