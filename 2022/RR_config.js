@@ -15,7 +15,7 @@ var config_data = `
         "code":"e",
         "type":"event",
         "defaultValue":"2022cave",
-	"size":10,
+	"size":7,
         "required":"true",
 	"disabled":"true"
       },
