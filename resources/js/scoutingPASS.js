@@ -15,7 +15,7 @@ var options = {
 };
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
-var requiredFields = ["e", "m", "l", "r", "s", "aca", "ala", "tua", "tla"];
+var requiredFields = ["e", "m", "l", "r", "s", "aca", "ala", "tua", "tla", "pi","pn", "co"];
 
 function addCounter(table, idx, name, data){
   var row = table.insertRow(idx);
@@ -474,6 +474,24 @@ function validateScore() {
 	}
 }
 
+function validateComment() {
+	if (document.getElementById("input_co").value.includes("'") == false)
+	{
+		return true
+	} else {
+		return false
+	}
+}
+
+function validatePenalties() {
+	if (document.getElementById("input_pi").value.includes("'") == false) 
+	{
+		return true
+	} else {
+		return false
+	}
+}
+
 function validateData() {
 	var ret = true
 	var errStr = "Invalid fields: ";
@@ -481,26 +499,21 @@ function validateData() {
 		// Robot requires special (radio) validation
 		if (rf == "r") {
 			if (!validateRobot()) {
-				errStr += rf + " "
+				errStr += "Robot "
 				ret = false
 			}
 		} else if (rf == "l") {
 			if (!validateLevel()) {
-				errStr += rf + " "
+				errStr += "Match Level "
 				ret = false
 			}
-		} else if (rf == "as") {
-			if (!validatePosition()) {
-				errStr += rf + " "
-				ret = false
-			} 
 		} else if (document.getElementById("input_m").value.length == 0) {
 				errStr += rf + " "
 				ret = false
 		}
 	}
 	if (ret == false) {
-		alert("Enter all required values (This show wrong values please fill the blank fields)\n"+errStr);
+		alert("Enter all required values (It shows wrong variables. Please fill the blank fields)\n"+errStr);
 	}
 	return ret
 }
@@ -511,12 +524,12 @@ function validateDataAuton() {
 	for (rf of requiredFields) {
 		if (rf == "aca") {
 			if (!validateScore()) {
-			errStr += rf + " "
+			errStr += "Upper Scored/Attempts "
 			ret = false
 			}
 		}else if (rf == "ala") {
 			if (!validateScore()) {
-				errStr += rf + " "
+				errStr += "Lower Scored/Attempts "
 				ret = false
 			}
 		}
@@ -533,12 +546,12 @@ function validateDataTeleop() {
 	for (rf of requiredFields) {
 		if (rf == "tua") {
 			if (!validateScore()) {
-			errStr += rf + " "
+			errStr += "Upper Scored/Attempts "
 			ret = false
 			}
 		}else if (rf == "tla") {
 			if (!validateScore()) {
-				errStr += rf + " "
+				errStr += "Lower Scored/Attempts "
 				ret = false
 			}
 		}
@@ -549,6 +562,39 @@ function validateDataTeleop() {
 	return ret
 }
 
+function validateDataComment() {
+	var ret = true
+	var errStr = "Invalid field: ";
+	for (rf of requiredFields) {
+		if (rf == "co") {
+			if (!validateComment()) {
+			errStr += "Comments "
+			ret = false
+			}
+		}
+	}
+	if (ret == false) {
+		alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
+	}
+	return ret
+}
+
+function validateDataPenalties() {
+	var ret = true
+	var errStr = "Invalid field: ";
+	for (rf of requiredFields) {
+		if (rf == "pi") {
+			if (!validatePenalties()) {
+			errStr += "Penalties Incurred "
+			ret = false
+			}
+		}
+	}
+	if (ret == false) {
+		alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
+	}
+	return ret
+}
 
 function getData() {
 	var str = ''
@@ -609,6 +655,10 @@ function qr_regenerate() {
 		// Don't allow a swipe until all required data is filled in
 		return false
 	} else if (validateDataAuton() == false) {
+		return false
+	} else if (validateDataComment() == false) {
+		return false
+	} else if (validateDataPenalties() == false) {
 		return false
 	}
 
