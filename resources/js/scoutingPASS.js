@@ -15,8 +15,7 @@ var options = {
 };
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
-//var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
-var requiredFields = ["e", "m", "l", "r", "s"];
+var requiredFields = ["e", "m", "l", "r", "s", "aca", "ala", "tua", "tla"];
 
 function addCounter(table, idx, name, data){
   var row = table.insertRow(idx);
@@ -463,9 +462,21 @@ function validatePosition() {
 	}
 }
 
+function validateScore() {
+	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value &&
+		document.getElementById("input_ala").value >= document.getElementById("input_al").value &&
+		document.getElementById("input_tua").value >= document.getElementById("input_tu").value &&
+		document.getElementById("input_tla").value >= document.getElementById("input_tl").value
+	) {
+		return true
+	} else {
+		return false
+	}
+}
+
 function validateData() {
 	var ret = true
-	var errStr = "Bad fields: ";
+	var errStr = "Invalid fields: ";
 	for (rf of requiredFields) {
 		// Robot requires special (radio) validation
 		if (rf == "r") {
@@ -493,6 +504,51 @@ function validateData() {
 	}
 	return ret
 }
+
+function validateDataAuton() {
+	var ret = true
+	var errStr = "Invalid field: ";
+	for (rf of requiredFields) {
+		if (rf == "aca") {
+			if (!validateScore()) {
+			errStr += rf + " "
+			ret = false
+			}
+		}else if (rf == "ala") {
+			if (!validateScore()) {
+				errStr += rf + " "
+				ret = false
+			}
+		}
+	}
+	if (ret == false) {
+		alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
+	}
+	return ret
+}
+
+function validateDataTeleop() {
+	var ret = true
+	var errStr = "Invalid field: ";
+	for (rf of requiredFields) {
+		if (rf == "tua") {
+			if (!validateScore()) {
+			errStr += rf + " "
+			ret = false
+			}
+		}else if (rf == "tla") {
+			if (!validateScore()) {
+				errStr += rf + " "
+				ret = false
+			}
+		}
+	}
+	if (ret == false) {
+		alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
+	}
+	return ret
+}
+
 
 function getData() {
 	var str = ''
@@ -551,6 +607,8 @@ function qr_regenerate() {
 	// Validate required pre-match date (event, match, level, robot, scouter)
 	if (validateData() == false) {
 		// Don't allow a swipe until all required data is filled in
+		return false
+	} else if (validateDataAuton() == false) {
 		return false
 	}
 
