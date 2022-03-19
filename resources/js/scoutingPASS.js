@@ -189,6 +189,54 @@ function addNumber(table, idx, name, data) {
   return idx+1;
 }
 
+function addTime(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx+1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name+'&nbsp;';
+  cell2.classList.add("field");
+  var inp = document.createElement("input");
+  inp.setAttribute("id", "input_"+data.code);
+  inp.setAttribute("type", "number");
+  inp.setAttribute("name", data.code);
+  inp.setAttribute("value", 0);
+	if ((data.type == 'team') ||
+	 	  (data.type == 'match'))
+	{
+		inp.setAttribute("onchange", "updateMatchStart(event)");
+	}
+  if (data.hasOwnProperty('min')) {
+    inp.setAttribute("min", data.min);
+  }
+  if (data.hasOwnProperty('max')) {
+    inp.setAttribute("max", data.max);
+  }
+  if (data.hasOwnProperty('defaultValue')) {
+    inp.setAttribute("value", data.defaultValue);
+  }
+  if (data.hasOwnProperty('disabled')) {
+    inp.setAttribute("disabled", "");
+  }
+  if (data.hasOwnProperty('required')) {
+    inp.setAttribute("required", "");
+  }
+  cell2.appendChild(inp);
+  if (data.type == 'team') {
+    row = table.insertRow(idx+1);
+    cell1 = row.insertCell(0);
+    cell1.setAttribute("id", "teamname-label");
+    cell1.setAttribute("colspan", 2);
+    cell1.setAttribute("style", "text-align: center;");
+    return idx+2;
+  }
+  return idx+1;
+}
+
 function addRadio(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -300,7 +348,10 @@ function addElement(table, idx, name, data){
   } else if (data.type == 'counter')
   {
     idx = addCounter(table, idx, name, data);
-  } else
+  } else if (data.type == 'time')
+  {  
+	idx = addTime(table, idx, name, data);
+  }else
   {
     console.log(`Unrecognized type: ${data.type}`);
   }
