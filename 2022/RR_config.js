@@ -60,16 +60,16 @@ var config_data = `
       }
     },
     "auton": {
-      "Taxi": {
-	"code":"tx",
-	"title":"Taxi",
-	"type":"radio",
-	"choices":{
-	  "0":"No<br>",
-	  "2":"Yes"
-	},
-	"defaultValue":"0"
-      },
+	  "Taxi": {
+		  "code":"tx",
+		  "title":"Taxi",
+		  "type":"radio",
+		  "choices":{
+			  "0":"No<br>",
+			  "2":"Yes"
+		  },
+		  "defaultValue":"0"
+	  },
       "Upper Cargo Scored": {
         "code":"au",
         "title": "Uppoer Cargo Scored",
@@ -90,7 +90,7 @@ var config_data = `
         "title": "Lower Cargo Attempsts",
         "type":"counter"
       }
-     },
+    },
     "teleop": {
       "Upper Cargo Scored": {
         "code":"tu",
@@ -117,9 +117,10 @@ var config_data = `
         "title": "Was Defended",
         "type":"radio",
 	"choices":{
-	  "Y":"Yes<br>",
-	  "N":"No"
-		}
+	  "N":"No<br>",
+	  "Y":"Yes"
+		},
+		"defaultValue":"N"
       },
       "Shooting Spot": {
         "code":"ss",
@@ -130,7 +131,8 @@ var config_data = `
           "tr":"Tarmac<br>",
           "fn":"Fender<br>",
           "ot":"Other"
-        }
+        },
+		"defaultValue":"ot"
       },
       "Pushing Capability": {
         "code":"pc",
@@ -141,7 +143,8 @@ var config_data = `
           "2":"2<br>",
           "3":"3<br>",
           "4":"4"
-        }
+        },
+		"defaultValue":"1"
       },
       "Counter-Defense<br>Maneuverability": {
         "code":"cd",
@@ -152,7 +155,8 @@ var config_data = `
           "2":"2<br>",
           "3":"3<br>",
           "4":"4"
-	}
+	},
+		"defaultValue":"1"
       },
       "Offensive<br>Maneuverability": {
         "code":"om",
@@ -163,7 +167,8 @@ var config_data = `
           "2":"2<br>",
           "3":"3<br>",
           "4":"4"
-        }
+        },
+		"defaultValue":"1"
       },
 	"Hoarding": {
 	  "code":"hd",
@@ -173,7 +178,8 @@ var config_data = `
 	    "1":"1<br>",
             "2":"2<br>",
             "3":"3"
-	}
+	},
+		"defaultValue":"1"
       },
 	"Intake Speed": {
 	  "code":"is",
@@ -184,7 +190,8 @@ var config_data = `
 	    "2":"2<br>",
 	    "3":"3<br>",
 	    "4":"4"
-	}
+	},
+		"defaultValue":"1"
       }
     },
     "endgame": {
@@ -215,9 +222,10 @@ var config_data = `
         "title": "Robot Died",
 	"type":"radio",
 	"choices":{
-	  "Y":"Yes<br>",
-	  "N":"No"
-	}
+	  "N":"No<br>",
+	  "Y":"Yes"
+	},
+	"defaultValue":"N"
       },
       "Penalties Incurred": {
         "code":"pi",
