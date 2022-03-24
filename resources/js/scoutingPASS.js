@@ -514,10 +514,10 @@ function validatePosition() {
 }
 
 function validateScore() {
-	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value || document.getElementById("input_aca").value.length >= document.getElementById("input_au").value.length &&
-		document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length >= document.getElementById("input_al").value.length &&
-		document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length >= document.getElementById("input_tu").value.length &&
-		document.getElementById("input_tla").value >= document.getElementById("input_tl").value || document.getElementById("input_tla").value.length >= document.getElementById("input_tl").value.length
+	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value && document.getElementById("input_aca").value.length >= document.getElementById("input_au").value.length &&
+		document.getElementById("input_ala").value >= document.getElementById("input_al").value && document.getElementById("input_ala").value.length >= document.getElementById("input_al").value.length &&
+		document.getElementById("input_tua").value >= document.getElementById("input_tu").value && document.getElementById("input_tua").value.length >= document.getElementById("input_tu").value.length &&
+		document.getElementById("input_tla").value >= document.getElementById("input_tl").value && document.getElementById("input_tla").value.length >= document.getElementById("input_tl").value.length
 	) {
 		return true
 	} else {
