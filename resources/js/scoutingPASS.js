@@ -514,10 +514,10 @@ function validatePosition() {
 }
 
 function validateScore() {
-	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value &&
-		document.getElementById("input_ala").value >= document.getElementById("input_al").value &&
-		document.getElementById("input_tua").value >= document.getElementById("input_tu").value &&
-		document.getElementById("input_tla").value >= document.getElementById("input_tl").value
+	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value || document.getElementById("input_aca").value.length >= document.getElementById("input_au").value.length &&
+		document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length >= document.getElementById("input_al").value.length &&
+		document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length >= document.getElementById("input_tu").value.length &&
+		document.getElementById("input_tla").value >= document.getElementById("input_tl").value || document.getElementById("input_tla").value.length >= document.getElementById("input_tl").value.length
 	) {
 		return true
 	} else {
@@ -569,36 +569,24 @@ function validateData() {
 	return ret
 }
 
-function validateDataAuton() {
+function validateDataScore() {
 	var ret = true
 	var errStr = "Invalid field: ";
 	for (rf of requiredFields) {
 		if (rf == "aca") {
 			if (!validateScore()) {
-			errStr += "Upper Scored/Attempts "
-			ret = false
+				errStr += "Upper Scored/Attempts "
+				ret = false
 			}
 		}else if (rf == "ala") {
 			if (!validateScore()) {
 				errStr += "Lower Scored/Attempts "
 				ret = false
 			}
-		}
-	}
-	if (ret == false) {
-		alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
-	}
-	return ret
-}
-
-function validateDataTeleop() {
-	var ret = true
-	var errStr = "Invalid field: ";
-	for (rf of requiredFields) {
-		if (rf == "tua") {
+		}else if (rf == "tua") {
 			if (!validateScore()) {
-			errStr += "Upper Scored/Attempts "
-			ret = false
+				errStr += "Upper Scored/Attempts "
+				ret = false
 			}
 		}else if (rf == "tla") {
 			if (!validateScore()) {
@@ -705,7 +693,7 @@ function qr_regenerate() {
 	if (validateData() == false) {
 		// Don't allow a swipe until all required data is filled in
 		return false
-	} else if (validateDataAuton() == false) {
+	} else if (validateDataScore() == false) {
 		return false
 	} else if (validateDataComment() == false) {
 		return false
