@@ -513,20 +513,36 @@ function validatePosition() {
 	}
 }
 
-function validateScoreUpper() {
-	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value || document.getElementById("input_aca").value.length > document.getElementById("input_au").value.length &&
-		document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length > document.getElementById("input_tu").value.length 
-	) {
+function validateScoreAutonUpper() {
+	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value || document.getElementById("input_aca").value.length > document.getElementById("input_au").value.length) 
+	{
 		return true
 	} else {
 		return false
 	}
 }
 
-function validateScoreLower() {
-	if (document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length > document.getElementById("input_al").value.length &&
-		document.getElementById("input_tla").value >= document.getElementById("input_tl").value || document.getElementById("input_tla").value.length > document.getElementById("input_tl").value.length
-	) {
+function validateScoreTeleopUpper() {
+	if (document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length > document.getElementById("input_tu").value.length )
+	{
+		return true
+	} else {
+		return false
+	}
+}
+
+function validateScoreAutonLower() {
+	if (document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length > document.getElementById("input_al").value.length)
+	{
+		return true
+	} else {
+		return false
+	}
+}
+
+function validateScoreTeleopLower() {
+	if (document.getElementById("input_tla").value >= document.getElementById("input_tl").value || document.getElementById("input_tla").value.length > document.getElementById("input_tl").value.length)
+	{
 		return true
 	} else {
 		return false
@@ -582,12 +598,12 @@ function validateDataScoreUpper() {
 	var errStr = "Invalid field: ";
 	for (rf of requiredFields) {
 		if (rf == "aca") {
-			if (!validateScoreUpper()) {
+			if (!validateScoreAutonUpper()) {
 				errStr += "Upper Scored/Attempts "
 				ret = false
 			}
 		}else if (rf == "tua") {
-			if (!validateScoreUpper()) {
+			if (!validateScoreTeleopUpper()) {
 				errStr += "Upper Scored/Attempts "
 				ret = false
 			}
@@ -604,12 +620,12 @@ function validateDataScoreLower() {
 	var errStr = "Invalid field: ";
 	for (rf of requiredFields) {
 		if (rf == "ala") {
-			if (!validateScoreLower()) {
+			if (!validateScoreAutonLower()) {
 				errStr += "Lower Scored/Attempts "
 				ret = false
 			}
 		}else if (rf == "tla") {
-			if (!validateScoreLower()) {
+			if (!validateScoreTeleopLower()) {
 				errStr += "Lower Scored/Attempts "
 				ret = false
 			}
