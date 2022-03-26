@@ -513,10 +513,18 @@ function validatePosition() {
 	}
 }
 
-function validateScore() {
+function validateScoreUpper() {
 	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value || document.getElementById("input_aca").value.length > document.getElementById("input_au").value.length &&
-		document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length > document.getElementById("input_al").value.length &&
-		document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length > document.getElementById("input_tu").value.length &&
+		document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length > document.getElementById("input_tu").value.length 
+	) {
+		return true
+	} else {
+		return false
+	}
+}
+
+function validateScoreLower() {
+	if (document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length > document.getElementById("input_al").value.length &&
 		document.getElementById("input_tla").value >= document.getElementById("input_tl").value || document.getElementById("input_tla").value.length > document.getElementById("input_tl").value.length
 	) {
 		return true
@@ -569,27 +577,39 @@ function validateData() {
 	return ret
 }
 
-function validateDataScore() {
+function validateDataScoreUpper() {
 	var ret = true
 	var errStr = "Invalid field: ";
 	for (rf of requiredFields) {
 		if (rf == "aca") {
-			if (!validateScore()) {
+			if (!validateScoreUpper()) {
 				errStr += "Upper Scored/Attempts "
-				ret = false
-			}
-		}else if (rf == "ala") {
-			if (!validateScore()) {
-				errStr += "Lower Scored/Attempts "
 				ret = false
 			}
 		}else if (rf == "tua") {
-			if (!validateScore()) {
+			if (!validateScoreUpper()) {
 				errStr += "Upper Scored/Attempts "
 				ret = false
 			}
+		}
+	}
+	if (ret == false) {
+		alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
+	}
+	return ret
+}
+
+function validateDataScoreLower() {
+	var ret = true
+	var errStr = "Invalid field: ";
+	for (rf of requiredFields) {
+		if (rf == "ala") {
+			if (!validateScoreLower()) {
+				errStr += "Lower Scored/Attempts "
+				ret = false
+			}
 		}else if (rf == "tla") {
-			if (!validateScore()) {
+			if (!validateScoreLower()) {
 				errStr += "Lower Scored/Attempts "
 				ret = false
 			}
@@ -693,7 +713,9 @@ function qr_regenerate() {
 	if (validateData() == false) {
 		// Don't allow a swipe until all required data is filled in
 		return false
-	} else if (validateDataScore() == false) {
+	} else if (validateDataScoreUpper() == false) {
+		return false
+	} else if (validateDataScoreLower() == false) {
 		return false
 	} else if (validateDataComment() == false) {
 		return false
