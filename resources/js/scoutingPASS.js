@@ -574,12 +574,12 @@ function validateData() {
 		// Robot requires special (radio) validation
 		if (rf == "r") {
 			if (!validateRobot()) {
-				errStr += "Robot "
+				errStr += rf + " "
 				ret = false
 			}
 		} else if (rf == "l") {
 			if (!validateLevel()) {
-				errStr += "Match Level "
+				errStr += rf + " "
 				ret = false
 			}
 		} else if (document.getElementById("input_t").value.length == 0) {
