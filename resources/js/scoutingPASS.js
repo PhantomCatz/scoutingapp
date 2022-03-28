@@ -8,8 +8,8 @@ var slide = 0;
 
 // Options
 var options = {
-	text: "t=9998;m=99;l=q;r=b1;s=rjs;d=0;to=0;ds=5;if=0;f=15;cf=0;in=1;alp=5;aop=5;aip=5;apu=5;atr=1;atro=0;lp=20;op=10;ip=10;rc=0;pc=0;ss=[(111,111),(111,111),(111,111),(111,111),(111,111),(111,111),(111,111)];c=1;hbc=0;ac=1;hc=0;cb=0;cs=3;nh=0;p=0;b=0;tr=1;ct=3;dr=3;comm='good shooter; shot from all over the field'",
-	correctLevel: QRCode.CorrectLevel.L,
+    text: "t=9998;m=99;l=q;r=b1;s=rjs;d=0;to=0;ds=5;if=0;f=15;cf=0;in=1;alp=5;aop=5;aip=5;apu=5;atr=1;atro=0;lp=20;op=10;ip=10;rc=0;pc=0;ss=[(111,111),(111,111),(111,111),(111,111),(111,111),(111,111),(111,111)];c=1;hbc=0;ac=1;hc=0;cb=0;cs=3;nh=0;p=0;b=0;tr=1;ct=3;dr=3;comm='good shooter; shot from all over the field'",
+    correctLevel: QRCode.CorrectLevel.L,
     quietZone: 15,
     quietZoneColor: '#FFFFFF'
 };
@@ -102,7 +102,7 @@ function addFieldImage(table, idx, name, data) {
   img.src = data.filename;
   img.setAttribute("id", "img_"+data.code);
   img.setAttribute("class", "field-image-src");
-	img.setAttribute("onload", "drawFields()");
+    img.setAttribute("onload", "drawFields()");
   //img.setAttribute("onclick", "onFieldClick(event)");
   img.setAttribute("hidden", "");
   cell.appendChild(img);
@@ -157,11 +157,11 @@ function addNumber(table, idx, name, data) {
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "number");
   inp.setAttribute("name", data.code);
-	if ((data.type == 'team') ||
-	 	  (data.type == 'match'))
-	{
-		inp.setAttribute("onchange", "updateMatchStart(event)");
-	}
+    if ((data.type == 'team') ||
+           (data.type == 'match'))
+    {
+        inp.setAttribute("onchange", "updateMatchStart(event)");
+    }
   if (data.hasOwnProperty('min')) {
     inp.setAttribute("min", data.min);
   }
@@ -205,11 +205,11 @@ function addTime(table, idx, name, data) {
   inp.setAttribute("type", "number");
   inp.setAttribute("name", data.code);
   inp.setAttribute("value", 0);
-	if ((data.type == 'team') ||
-	 	  (data.type == 'match'))
-	{
-		inp.setAttribute("onchange", "updateMatchStart(event)");
-	}
+    if ((data.type == 'team') ||
+           (data.type == 'match'))
+    {
+        inp.setAttribute("onchange", "updateMatchStart(event)");
+    }
   if (data.hasOwnProperty('min')) {
     inp.setAttribute("min", data.min);
   }
@@ -248,12 +248,12 @@ function addRadio(table, idx, name, data) {
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
   cell2.classList.add("field");
-	if ((data.type == 'level') ||
-			(data.type == 'robot')
-		)
-	{
-		cell2.setAttribute("onchange", "updateMatchStart(event)");
-	}
+    if ((data.type == 'level') ||
+            (data.type == 'robot')
+        )
+    {
+        cell2.setAttribute("onchange", "updateMatchStart(event)");
+    }
   var checked = null
   if (data.hasOwnProperty('defaultValue')) {
     checked = data.defaultValue;
@@ -265,7 +265,7 @@ function addRadio(table, idx, name, data) {
       inp.setAttribute("id", "input_"+data.code+"_"+c);
       inp.setAttribute("type", "radio");
       inp.setAttribute("name", data.code);
-			inp.setAttribute("value", c);
+            inp.setAttribute("value", c);
       if (checked == c) {
         inp.setAttribute("checked", "");
       }
@@ -349,8 +349,8 @@ function addElement(table, idx, name, data){
   {
     idx = addCounter(table, idx, name, data);
   } else if (data.type == 'time')
-  {  
-	idx = addTime(table, idx, name, data);
+  {
+    idx = addTime(table, idx, name, data);
   }else
   {
     console.log(`Unrecognized type: ${data.type}`);
@@ -419,334 +419,334 @@ function configure(){
 }
 
 function getRobot(){
-	if (document.getElementById("input_r_r1").checked){
-		return "r1";
-	} else if(document.getElementById("input_r_r2").checked){
-		return "r2";
-	} else if(document.getElementById("input_r_r3").checked){
-		return "r3";
-	} else if(document.getElementById("input_r_b1").checked){
-		return "b1";
-	} else if(document.getElementById("input_r_b2").checked){
-		return "b2";
-	} else if(document.getElementById("input_r_b3").checked){
-		return "b3";
-	}	else {
-		return "";
-	}
+    if (document.getElementById("input_r_r1").checked){
+        return "r1";
+    } else if(document.getElementById("input_r_r2").checked){
+        return "r2";
+    } else if(document.getElementById("input_r_r3").checked){
+        return "r3";
+    } else if(document.getElementById("input_r_b1").checked){
+        return "b1";
+    } else if(document.getElementById("input_r_b2").checked){
+        return "b2";
+    } else if(document.getElementById("input_r_b3").checked){
+        return "b3";
+    }    else {
+        return "";
+    }
 }
 
 function validateRobot() {
-	if (document.getElementById("input_r_r1").checked ||
-		document.getElementById("input_r_r2").checked ||
-		document.getElementById("input_r_r3").checked ||
-		document.getElementById("input_r_b1").checked ||
-		document.getElementById("input_r_b2").checked ||
-		document.getElementById("input_r_b3").checked
-	) {
-		return true
-	} else {
+    if (document.getElementById("input_r_r1").checked ||
+        document.getElementById("input_r_r2").checked ||
+        document.getElementById("input_r_r3").checked ||
+        document.getElementById("input_r_b1").checked ||
+        document.getElementById("input_r_b2").checked ||
+        document.getElementById("input_r_b3").checked
+    ) {
+        return true
+    } else {
 
-		return false
-	}
+        return false
+    }
 }
 
 function resetRobot() {
-	if (document.getElementById("input_r_r1").checked) {
-		document.getElementById("input_r_r1").checked = false
-	}
-	if (document.getElementById("input_r_r2").checked) {
-		document.getElementById("input_r_r2").checked = false
-	}
-	if (document.getElementById("input_r_r3").checked) {
-		document.getElementById("input_r_r3").checked = false
-	}
-	if (document.getElementById("input_r_b1").checked) {
-		document.getElementById("input_r_b1").checked = false
-	}
-	if (document.getElementById("input_r_b2").checked) {
-		document.getElementById("input_r_b2").checked = false
-	}
-	if (document.getElementById("input_r_b3").checked) {
-		document.getElementById("input_r_b3").checked = false
-	}
+    if (document.getElementById("input_r_r1").checked) {
+        document.getElementById("input_r_r1").checked = false
+    }
+    if (document.getElementById("input_r_r2").checked) {
+        document.getElementById("input_r_r2").checked = false
+    }
+    if (document.getElementById("input_r_r3").checked) {
+        document.getElementById("input_r_r3").checked = false
+    }
+    if (document.getElementById("input_r_b1").checked) {
+        document.getElementById("input_r_b1").checked = false
+    }
+    if (document.getElementById("input_r_b2").checked) {
+        document.getElementById("input_r_b2").checked = false
+    }
+    if (document.getElementById("input_r_b3").checked) {
+        document.getElementById("input_r_b3").checked = false
+    }
 }
 
 
 function getLevel(){
-	if(document.getElementById("input_l_qm").checked){
-		return "qm";
-	} else if(document.getElementById("input_l_ef").checked){
-		return "ef";
-	} else if(document.getElementById("input_l_qf").checked){
-		return "qf";
-	} else if(document.getElementById("input_l_sf").checked){
-		return "sf";
-	} else if(document.getElementById("input_l_f").checked){
-		return "f";
-	} else {
-		return "";
-	}
+    if(document.getElementById("input_l_qm").checked){
+        return "qm";
+    } else if(document.getElementById("input_l_ef").checked){
+        return "ef";
+    } else if(document.getElementById("input_l_qf").checked){
+        return "qf";
+    } else if(document.getElementById("input_l_sf").checked){
+        return "sf";
+    } else if(document.getElementById("input_l_f").checked){
+        return "f";
+    } else {
+        return "";
+    }
 }
 
 function validateLevel() {
-	if (document.getElementById("input_l_qm").checked ||
-		document.getElementById("input_l_ef").checked ||
-		document.getElementById("input_l_qf").checked ||
-		document.getElementById("input_l_sf").checked ||
-		document.getElementById("input_l_f").checked
-	) {
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_l_qm").checked ||
+        document.getElementById("input_l_ef").checked ||
+        document.getElementById("input_l_qf").checked ||
+        document.getElementById("input_l_sf").checked ||
+        document.getElementById("input_l_f").checked
+    ) {
+        return true
+    } else {
+        return false
+    }
 }
 
 function validatePosition() {
-	if (document.getElementById("input_l_qm").checked ||
-		document.getElementById("input_l_ef").checked ||
-		document.getElementById("input_l_qf").checked
-	) {
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_l_qm").checked ||
+        document.getElementById("input_l_ef").checked ||
+        document.getElementById("input_l_qf").checked
+    ) {
+        return true
+    } else {
+        return false
+    }
 }
 
 function validateScoreAutonUpper() {
-	if (document.getElementById("input_aca").value >= document.getElementById("input_au").value || document.getElementById("input_aca").value.length > document.getElementById("input_au").value.length) 
-	{
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_aca").value >= document.getElementById("input_au").value || document.getElementById("input_aca").value.length > document.getElementById("input_au").value.length)
+    {
+        return true
+    } else {
+        return false
+    }
 }
 
 function validateScoreTeleopUpper() {
-	if (document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length > document.getElementById("input_tu").value.length )
-	{
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_tua").value >= document.getElementById("input_tu").value || document.getElementById("input_tua").value.length > document.getElementById("input_tu").value.length )
+    {
+        return true
+    } else {
+        return false
+    }
 }
 
 function validateScoreAutonLower() {
-	if (document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length > document.getElementById("input_al").value.length)
-	{
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_ala").value >= document.getElementById("input_al").value || document.getElementById("input_ala").value.length > document.getElementById("input_al").value.length)
+    {
+        return true
+    } else {
+        return false
+    }
 }
 
 function validateScoreTeleopLower() {
-	if (document.getElementById("input_tla").value >= document.getElementById("input_tl").value || document.getElementById("input_tla").value.length > document.getElementById("input_tl").value.length)
-	{
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_tla").value >= document.getElementById("input_tl").value || document.getElementById("input_tla").value.length > document.getElementById("input_tl").value.length)
+    {
+        return true
+    } else {
+        return false
+    }
 }
 
 function validateComment() {
-	if (document.getElementById("input_co").value.includes("'") == false)
-	{
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_co").value.includes("'") == false && document.getElementById("input_co").value.includes("’") == false)
+    {
+        return true
+    }else {
+        return false
+    }
 }
 
 function validatePenalties() {
-	if (document.getElementById("input_pi").value.includes("'") == false) 
-	{
-		return true
-	} else {
-		return false
-	}
+    if (document.getElementById("input_pi").value.includes("'") == false && document.getElementById("input_pi").value.includes("’") == false)
+    {
+        return true
+    }else {
+        return false
+    }
 }
 
 function validateData() {
-	var ret = true
-	var errStr = "Invalid fields: ";
-	for (rf of requiredFields) {
-		// Robot requires special (radio) validation
-		if (rf == "r") {
-			if (!validateRobot()) {
-				errStr += rf + " "
-				ret = false
-			}
-		} else if (rf == "l") {
-			if (!validateLevel()) {
-				errStr += rf + " "
-				ret = false
-			}
-		} else if (document.getElementById("input_t").value.length == 0) {
-				errStr += rf + " "
-				ret = false
-		}
-	}
-	if (ret == false) {
-		alert("Enter all required values (It shows wrong variables. Please fill the blank fields)\n"+errStr);
-	}
-	return ret
+    var ret = true
+    var errStr = "Invalid fields: ";
+    for (rf of requiredFields) {
+        // Robot requires special (radio) validation
+        if (rf == "r") {
+            if (!validateRobot()) {
+                errStr += rf + " "
+                ret = false
+            }
+        } else if (rf == "l") {
+            if (!validateLevel()) {
+                errStr += rf + " "
+                ret = false
+            }
+        } else if (document.getElementById("input_t").value.length == 0) {
+                errStr += rf + " "
+                ret = false
+        }
+    }
+    if (ret == false) {
+        alert("Enter all required values (It shows wrong variables. Please fill the blank fields)\n"+errStr);
+    }
+    return ret
 }
 
 function validateDataScoreUpper() {
-	var ret = true
-	var errStr = "Invalid field: ";
-	for (rf of requiredFields) {
-		if (rf == "aca") {
-			if (!validateScoreAutonUpper()) {
-				errStr += "Upper Scored/Attempts "
-				ret = false
-			}
-		}else if (rf == "tua") {
-			if (!validateScoreTeleopUpper()) {
-				errStr += "Upper Scored/Attempts "
-				ret = false
-			}
-		}
-	}
-	if (ret == false) {
-		alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
-	}
-	return ret
+    var ret = true
+    var errStr = "Invalid field: ";
+    for (rf of requiredFields) {
+        if (rf == "aca") {
+            if (!validateScoreAutonUpper()) {
+                errStr += "Upper Scored/Attempts "
+                ret = false
+            }
+        }else if (rf == "tua") {
+            if (!validateScoreTeleopUpper()) {
+                errStr += "Upper Scored/Attempts "
+                ret = false
+            }
+        }
+    }
+    if (ret == false) {
+        alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
+    }
+    return ret
 }
 
 function validateDataScoreLower() {
-	var ret = true
-	var errStr = "Invalid field: ";
-	for (rf of requiredFields) {
-		if (rf == "ala") {
-			if (!validateScoreAutonLower()) {
-				errStr += "Lower Scored/Attempts "
-				ret = false
-			}
-		}else if (rf == "tla") {
-			if (!validateScoreTeleopLower()) {
-				errStr += "Lower Scored/Attempts "
-				ret = false
-			}
-		}
-	}
-	if (ret == false) {
-		alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
-	}
-	return ret
+    var ret = true
+    var errStr = "Invalid field: ";
+    for (rf of requiredFields) {
+        if (rf == "ala") {
+            if (!validateScoreAutonLower()) {
+                errStr += "Lower Scored/Attempts "
+                ret = false
+            }
+        }else if (rf == "tla") {
+            if (!validateScoreTeleopLower()) {
+                errStr += "Lower Scored/Attempts "
+                ret = false
+            }
+        }
+    }
+    if (ret == false) {
+        alert("Scores cannot be greater than attempts (please check every fields)\n" + errStr);
+    }
+    return ret
 }
 
 function validateDataComment() {
-	var ret = true
-	var errStr = "Invalid field: ";
-	for (rf of requiredFields) {
-		if (rf == "co") {
-			if (!validateComment()) {
-			errStr += "Comments "
-			ret = false
-			}
-		}
-	}
-	if (ret == false) {
-		alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
-	}
-	return ret
+    var ret = true
+    var errStr = "Invalid field: ";
+    for (rf of requiredFields) {
+        if (rf == "co") {
+            if (!validateComment()) {
+            errStr += "Comments "
+            ret = false
+            }
+        }
+    }
+    if (ret == false) {
+        alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
+    }
+    return ret
 }
 
 function validateDataPenalties() {
-	var ret = true
-	var errStr = "Invalid field: ";
-	for (rf of requiredFields) {
-		if (rf == "pi") {
-			if (!validatePenalties()) {
-			errStr += "Penalties Incurred "
-			ret = false
-			}
-		}
-	}
-	if (ret == false) {
-		alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
-	}
-	return ret
+    var ret = true
+    var errStr = "Invalid field: ";
+    for (rf of requiredFields) {
+        if (rf == "pi") {
+            if (!validatePenalties()) {
+            errStr += "Penalties Incurred "
+            ret = false
+            }
+        }
+    }
+    if (ret == false) {
+        alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
+    }
+    return ret
 }
 
 function getData() {
-	var str = ''
-	var rep = ''
-	var start = true
-	inputs = document.querySelectorAll("[id*='input_']");
-	for (e of inputs) {
-		code = e.id.substring(6)
-		radio = code.indexOf("_")
-		if (radio > -1) {
-			if (e.checked) {
-				if (start==false) {
-					str=str+';'
-				} else {
-					start=false
-				}
-				// str=str+code.substr(0,radio)+'='+code.substr(radio+1)
-				// document.getElementById("display_"+code.substr(0, radio)).value = code.substr(radio+1)
-				str=str+code.substr(0,radio)+'='+e.value
-				document.getElementById("display_"+code.substr(0, radio)).value = e.value
-			}
-		} else {
-			if (start==false) {
-				str=str+';'
-			} else {
-				start=false
-			}
-			if (e.value == "on") {
-				if (e.checked) {
-					str=str+code+'=Y'
-				} else {
-					str=str+code+'=N'
-				}
-			} else {
-				str=str+code+'='+e.value.replace(";", "-")
-			}
-		}
-	}
-	return str
+    var str = ''
+    var rep = ''
+    var start = true
+    inputs = document.querySelectorAll("[id*='input_']");
+    for (e of inputs) {
+        code = e.id.substring(6)
+        radio = code.indexOf("_")
+        if (radio > -1) {
+            if (e.checked) {
+                if (start==false) {
+                    str=str+';'
+                } else {
+                    start=false
+                }
+                // str=str+code.substr(0,radio)+'='+code.substr(radio+1)
+                // document.getElementById("display_"+code.substr(0, radio)).value = code.substr(radio+1)
+                str=str+code.substr(0,radio)+'='+e.value
+                document.getElementById("display_"+code.substr(0, radio)).value = e.value
+            }
+        } else {
+            if (start==false) {
+                str=str+';'
+            } else {
+                start=false
+            }
+            if (e.value == "on") {
+                if (e.checked) {
+                    str=str+code+'=Y'
+                } else {
+                    str=str+code+'=N'
+                }
+            } else {
+                str=str+code+'='+e.value.replace(";", "-")
+            }
+        }
+    }
+    return str
 }
 
 function updateQRHeader() {
-	var str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
+    var str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
 
-	str = str
-		.replace('!EVENT!', document.getElementById("input_e").value)
-		.replace('!MATCH!', document.getElementById("input_m").value)
-		.replace('!ROBOT!', document.getElementById("display_r").value)
-		.replace('!TEAM!', document.getElementById("input_t").value);
+    str = str
+        .replace('!EVENT!', document.getElementById("input_e").value)
+        .replace('!MATCH!', document.getElementById("input_m").value)
+        .replace('!ROBOT!', document.getElementById("display_r").value)
+        .replace('!TEAM!', document.getElementById("input_t").value);
 
-	document.getElementById("display_qr-info").textContent = str;
+    document.getElementById("display_qr-info").textContent = str;
 }
 
 
 function qr_regenerate() {
-	// Validate required pre-match date (event, match, level, robot, scouter)
-	if (validateData() == false) {
-		// Don't allow a swipe until all required data is filled in
-		return false
-	} else if (validateDataScoreUpper() == false) {
-		return false
-	} else if (validateDataScoreLower() == false) {
-		return false
-	} else if (validateDataComment() == false) {
-		return false
-	} else if (validateDataPenalties() == false) {
-		return false
-	}
+    // Validate required pre-match date (event, match, level, robot, scouter)
+    if (validateData() == false) {
+        // Don't allow a swipe until all required data is filled in
+        return false
+    } else if (validateDataScoreUpper() == false) {
+        return false
+    } else if (validateDataScoreLower() == false) {
+        return false
+    } else if (validateDataComment() == false) {
+        return false
+    } else if (validateDataPenalties() == false) {
+        return false
+    }
 
-	// Get data
-	data = getData()
+    // Get data
+    data = getData()
 
   // Regenerate QR Code
-	qr.makeCode(data)
+    qr.makeCode(data)
 
-	updateQRHeader()
-	return true
+    updateQRHeader()
+    return true
 }
 
 function qr_clear() {
@@ -754,232 +754,232 @@ function qr_clear() {
 }
 
 function clearForm() {
-	var match = 0;
-	var e = 0;
+    var match = 0;
+    var e = 0;
 
-	swipePage(-5)
+    swipePage(-5)
 
-	// Increment match
-	match = parseInt(document.getElementById("input_m").value)
-	if (match == NaN) {
-		document.getElementById("input_m").value = ""
-	} else {
-		document.getElementById("input_m").value = match+1
-	}
+    // Increment match
+    match = parseInt(document.getElementById("input_m").value)
+    if (match == NaN) {
+        document.getElementById("input_m").value = ""
+    } else {
+        document.getElementById("input_m").value = match+1
+    }
 
-	// Robot
-	resetRobot()
+    // Robot
+    resetRobot()
 
-	// Clear XY coordinates
-	inputs = document.querySelectorAll("[id*='XY_']");
-	for (e of inputs) {
-		code = e.id.substring(3)
-		e.value = ""
-	}
+    // Clear XY coordinates
+    inputs = document.querySelectorAll("[id*='XY_']");
+    for (e of inputs) {
+        code = e.id.substring(3)
+        e.value = ""
+    }
 
-	inputs = document.querySelectorAll("[id*='input_']");
-	for (e of inputs) {
-		code = e.id.substring(6)
+    inputs = document.querySelectorAll("[id*='input_']");
+    for (e of inputs) {
+        code = e.id.substring(6)
 
-		// Don't clear key fields
-		if (code == "m") continue
-		if (code.substring(0,2) == "r_") continue
-		if (code.substring(0,2) == "l_") continue
-		if (code == "e") continue
-		if (code == "s") continue
+        // Don't clear key fields
+        if (code == "m") continue
+        if (code.substring(0,2) == "r_") continue
+        if (code.substring(0,2) == "l_") continue
+        if (code == "e") continue
+        if (code == "s") continue
 
 
-		radio = code.indexOf("_")
-		if (radio > -1) {
-			if (e.checked) {
-				e.checked = false
-				document.getElementById("display_"+code.substr(0, radio)).value = ""
-			}
-		} else {
-			if (e.type=="number" || e.type=="text" || e.type=="hidden") {
-				if (e.className == "counter") {
-					e.value = 0
-				} else {
-					e.value = ""
-				}
-			} else if (e.type == "checkbox") {
-				if (e.checked == true) {
-					e.checked = false
-				}
-			} else {
-				console.log("unsupported input type")
-			}
-		}
-	}
-	drawFields()
+        radio = code.indexOf("_")
+        if (radio > -1) {
+            if (e.checked) {
+                e.checked = false
+                document.getElementById("display_"+code.substr(0, radio)).value = ""
+            }
+        } else {
+            if (e.type=="number" || e.type=="text" || e.type=="hidden") {
+                if (e.className == "counter") {
+                    e.value = 0
+                } else {
+                    e.value = ""
+                }
+            } else if (e.type == "checkbox") {
+                if (e.checked == true) {
+                    e.checked = false
+                }
+            } else {
+                console.log("unsupported input type")
+            }
+        }
+    }
+    drawFields()
 }
 
 function startTouch(e) {
-	initialX = e.touches[0].screenX;
+    initialX = e.touches[0].screenX;
 };
 
 function moveTouch(e) {
-	if (initialX === null) {
-  	return;
-	}
+    if (initialX === null) {
+      return;
+    }
 
-	var currentX = e.changedTouches[0].screenX;
-	var diffX = initialX - currentX;
+    var currentX = e.changedTouches[0].screenX;
+    var diffX = initialX - currentX;
 
   // sliding horizontally
-	if (diffX/screen.width > xThreshold) {
-		// swiped left
-		swipePage(1);
-	} else if(diffX/screen.width < -xThreshold) {
-		// swiped right
-  	swipePage(-1);
-	}
-	initialX = null;
+    if (diffX/screen.width > xThreshold) {
+        // swiped left
+        swipePage(1);
+    } else if(diffX/screen.width < -xThreshold) {
+        // swiped right
+      swipePage(-1);
+    }
+    initialX = null;
 };
 
 function swipePage(incriment){
-	if (qr_regenerate() == true) {
-		slides = document.getElementById("main-panel-holder").children
-		if(slide + incriment < slides.length && slide + incriment >= 0){
-			slides[slide].style.display = "none";
-			slide += incriment;
-			window.scrollTo(0,0);
-			slides[slide].style.display = "table";
-		}
-	}
+    if (qr_regenerate() == true) {
+        slides = document.getElementById("main-panel-holder").children
+        if(slide + incriment < slides.length && slide + incriment >= 0){
+            slides[slide].style.display = "none";
+            slide += incriment;
+            window.scrollTo(0,0);
+            slides[slide].style.display = "table";
+        }
+    }
 }
 
 function drawFields(name) {
-	var fields = document.querySelectorAll("[id*='canvas_']");
+    var fields = document.querySelectorAll("[id*='canvas_']");
 
-	for (f of fields) {
-		code = f.id.substring(7);
-		var img = document.getElementById("img_"+code);
-		var ctx = f.getContext("2d");
-		ctx.clearRect(0,0,f.width,f.height);
-		ctx.drawImage(img, 0, 0, f.width, f.height);
+    for (f of fields) {
+        code = f.id.substring(7);
+        var img = document.getElementById("img_"+code);
+        var ctx = f.getContext("2d");
+        ctx.clearRect(0,0,f.width,f.height);
+        ctx.drawImage(img, 0, 0, f.width, f.height);
 
-		var xyStr = document.getElementById("XY_"+code).value
-		if (JSON.stringify(xyStr).length > 2) {
-			pts = Array.from(JSON.parse(xyStr))
-			for (p of pts) {
-				var coord = p.split(",")
-				var centerX = coord[0];
-				var centerY = coord[1];
-				var radius = 5;
-				ctx.beginPath();
-				ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-				ctx.lineWidth = 1;
-				ctx.strokeStyle = '#FFFFFF';
-				ctx.stroke();
-			}
-		}
-	}
+        var xyStr = document.getElementById("XY_"+code).value
+        if (JSON.stringify(xyStr).length > 2) {
+            pts = Array.from(JSON.parse(xyStr))
+            for (p of pts) {
+                var coord = p.split(",")
+                var centerX = coord[0];
+                var centerY = coord[1];
+                var radius = 5;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = '#FFFFFF';
+                ctx.stroke();
+            }
+        }
+    }
 }
 
 function onFieldClick(event){
-	//Resolution height and width (e.g. 52x26)
-	var resL = 12;
-	var resH = 6;
+    //Resolution height and width (e.g. 52x26)
+    var resL = 12;
+    var resH = 6;
 
-	let target = event.target;
+    let target = event.target;
 
-	//Turns coordinates into a numeric box
-	let box = ((Math.ceil(event.offsetY / target.height * resH )-1) * resL) + Math.ceil(event.offsetX / target.width * resL)
-	let coords = event.offsetX + "," + event.offsetY;
+    //Turns coordinates into a numeric box
+    let box = ((Math.ceil(event.offsetY / target.height * resH )-1) * resL) + Math.ceil(event.offsetX / target.width * resL)
+    let coords = event.offsetX + "," + event.offsetY;
 
-	//Cumulating values
-	changingXY = document.getElementById("XY" + getIdBase(target.id));
-	changingInput = document.getElementById("input" + getIdBase(target.id));
+    //Cumulating values
+    changingXY = document.getElementById("XY" + getIdBase(target.id));
+    changingInput = document.getElementById("input" + getIdBase(target.id));
 
-	// TODO: 2nd half of this if statement is a hack for auto start - don't allow more than one starting position
-	if((JSON.stringify(changingXY.value).length > 2) && changingXY.id !== "XY_as"){
-		var tempValue = Array.from(JSON.parse(changingXY.value));
-		tempValue.push(coords);
-		changingXY.value = JSON.stringify(tempValue);
+    // TODO: 2nd half of this if statement is a hack for auto start - don't allow more than one starting position
+    if((JSON.stringify(changingXY.value).length > 2) && changingXY.id !== "XY_as"){
+        var tempValue = Array.from(JSON.parse(changingXY.value));
+        tempValue.push(coords);
+        changingXY.value = JSON.stringify(tempValue);
 
-		tempValue = Array.from(JSON.parse(changingInput.value));
-		tempValue.push(box);
-		changingInput.value = JSON.stringify(tempValue);
-	} else{
-		changingXY.value = JSON.stringify([coords]);
-		changingInput.value = JSON.stringify([box]);
-	}
+        tempValue = Array.from(JSON.parse(changingInput.value));
+        tempValue.push(box);
+        changingInput.value = JSON.stringify(tempValue);
+    } else{
+        changingXY.value = JSON.stringify([coords]);
+        changingInput.value = JSON.stringify([box]);
+    }
 
-	drawFields()
+    drawFields()
 }
 
 function getIdBase(name){
-	return name.slice(name.indexOf("_"), name.length)
+    return name.slice(name.indexOf("_"), name.length)
 }
 
 function getTeamName(teamNumber){
-	if(teamNumber !== undefined){
-		if (teams) {
-			var teamKey = "frc" + teamNumber;
-			var ret = "";
-			Array.from(teams).forEach(team => ret = team.key == teamKey ? team.nickname : ret);
-			return ret;
-		}
-	}
-	return "";
+    if(teamNumber !== undefined){
+        if (teams) {
+            var teamKey = "frc" + teamNumber;
+            var ret = "";
+            Array.from(teams).forEach(team => ret = team.key == teamKey ? team.nickname : ret);
+            return ret;
+        }
+    }
+    return "";
 }
 
 function getMatch(matchKey){
-	//This needs to be different than getTeamName() because of how JS stores their data
-	if(matchKey !== undefined){
-		if (schedule) {
-			var ret = "";
-			Array.from(schedule).forEach(match => ret = match.key == matchKey ? match.alliances : ret);
-			return ret;
-		}
-	}
-	return "";
+    //This needs to be different than getTeamName() because of how JS stores their data
+    if(matchKey !== undefined){
+        if (schedule) {
+            var ret = "";
+            Array.from(schedule).forEach(match => ret = match.key == matchKey ? match.alliances : ret);
+            return ret;
+        }
+    }
+    return "";
 }
 
 function getCurrentTeamNumberFromRobot(){
-	if(getRobot() != "" && typeof getRobot() !== 'undefined' && getCurrentMatch() != ""){
-		if(getRobot().charAt(0) == "r"){
-			return getCurrentMatch().red.team_keys[parseInt(getRobot().charAt(1))-1]
-		} else if(getRobot().charAt(0) == "b"){
-			return getCurrentMatch().blue.team_keys[parseInt(getRobot().charAt(1))-1]
-		}
-	}
+    if(getRobot() != "" && typeof getRobot() !== 'undefined' && getCurrentMatch() != ""){
+        if(getRobot().charAt(0) == "r"){
+            return getCurrentMatch().red.team_keys[parseInt(getRobot().charAt(1))-1]
+        } else if(getRobot().charAt(0) == "b"){
+            return getCurrentMatch().blue.team_keys[parseInt(getRobot().charAt(1))-1]
+        }
+    }
 }
 
 function getCurrentMatchKey(){
-	return document.getElementById("input_e").value + "_" + getLevel() + document.getElementById("input_m").value;
+    return document.getElementById("input_e").value + "_" + getLevel() + document.getElementById("input_m").value;
 }
 
 function getCurrentMatch(){
-	return getMatch(getCurrentMatchKey());
+    return getMatch(getCurrentMatchKey());
 }
 
 function updateMatchStart(event){
-	if((getCurrentMatch() == "") ||
-		 (!teams)) {
-		return;
-	}
-	if(event.target.name == "r"){
-		document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
-		onTeamnameChange();
-	}
-	if(event.target.name == "m"){
-		if(getRobot() != "" && typeof getRobot()){
-			document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
-			onTeamnameChange();
-		}
-	}
+    if((getCurrentMatch() == "") ||
+         (!teams)) {
+        return;
+    }
+    if(event.target.name == "r"){
+        document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
+        onTeamnameChange();
+    }
+    if(event.target.name == "m"){
+        if(getRobot() != "" && typeof getRobot()){
+            document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
+            onTeamnameChange();
+        }
+    }
 }
 
 function onTeamnameChange(event){
-	var newNumber = document.getElementById("input_t").value;
-	var teamLabel = document.getElementById("teamname-label");
-	if(newNumber != ""){
-		teamLabel.innerText = getTeamName(newNumber) != "" ? "You are scouting " + getTeamName(newNumber) : "That team isn't playing this match, please double check to verify correct number";
-	} else{
-		teamLabel.innerText = "";
-	}
+    var newNumber = document.getElementById("input_t").value;
+    var teamLabel = document.getElementById("teamname-label");
+    if(newNumber != ""){
+        teamLabel.innerText = getTeamName(newNumber) != "" ? "You are scouting " + getTeamName(newNumber) : "That team isn't playing this match, please double check to verify correct number";
+    } else{
+        teamLabel.innerText = "";
+    }
 }
 
 /**
@@ -990,24 +990,24 @@ function onTeamnameChange(event){
  */
 function counter(element, step)
 {
-		var ctr = element.getElementsByClassName("counter")[0];
-		var result = parseInt(ctr.value) + step;
+        var ctr = element.getElementsByClassName("counter")[0];
+        var result = parseInt(ctr.value) + step;
 
-		if(isNaN(result)) {
-				result = 0;
-		}
+        if(isNaN(result)) {
+                result = 0;
+        }
 
-		if(result >= 0 || ctr.hasAttribute('data-negative')) {
-				ctr.value = result;
-		} else {
-				ctr.value = 0;
-		}
+        if(result >= 0 || ctr.hasAttribute('data-negative')) {
+                ctr.value = result;
+        } else {
+                ctr.value = 0;
+        }
 }
 
 window.onload = function(){
-	configure();
-	var ec = document.getElementById("input_e").value;
-	getTeams(ec);
-	getSchedule(ec);
-	this.drawFields();
+    configure();
+    var ec = document.getElementById("input_e").value;
+    getTeams(ec);
+    getSchedule(ec);
+    this.drawFields();
 };
