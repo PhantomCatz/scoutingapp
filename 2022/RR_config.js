@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022",
+        "defaultValue":"2022cala",
 	"size":7,
         "required":"true",
 	"disabled":"true"
