@@ -15,7 +15,7 @@ var options = {
 };
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
-var requiredFields = ["e", "m", "l", "r", "s", "aca", "ala", "tua", "tla", "pi","pn", "co"];
+var requiredFields = ["e", "m", "l", "r", "t", "s", "aca", "ala", "tua", "tla", "pi","pn", "co"];
 
 function addCounter(table, idx, name, data){
   var row = table.insertRow(idx);
