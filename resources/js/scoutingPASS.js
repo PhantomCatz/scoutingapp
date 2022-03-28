@@ -582,7 +582,7 @@ function validateData() {
 				errStr += "Match Level "
 				ret = false
 			}
-		} else if (document.getElementById("input_m").value.length == 0) {
+		} else if (document.getElementById("input_t").value.length == 0) {
 				errStr += rf + " "
 				ret = false
 		}
