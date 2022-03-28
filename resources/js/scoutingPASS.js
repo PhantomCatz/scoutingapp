@@ -550,7 +550,8 @@ function validateScoreTeleopLower() {
 }
 
 function validateComment() {
-    if (document.getElementById("input_co").value.includes("'") == false && document.getElementById("input_co").value.includes("’") == false)
+    if (document.getElementById("input_co").value.includes("'") == false && document.getElementById("input_co").value.includes("’") == false &&
+        document.getElementById("input_co").value.includes("‘") == false)
     {
         return true
     }else {
@@ -559,7 +560,8 @@ function validateComment() {
 }
 
 function validatePenalties() {
-    if (document.getElementById("input_pi").value.includes("'") == false && document.getElementById("input_pi").value.includes("’") == false)
+    if (document.getElementById("input_pi").value.includes("'") == false && document.getElementById("input_pi").value.includes("’") == false &&
+        document.getElementById("input_pi").value.includes("‘") == false)
     {
         return true
     }else {
