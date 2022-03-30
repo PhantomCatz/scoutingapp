@@ -649,7 +649,7 @@ function validateDataComment() {
         }
     }
     if (ret == false) {
-        alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
+        alert("No apostrophe(') in text box. Please remove them.\n" + errStr);
     }
     return ret
 }
@@ -666,7 +666,7 @@ function validateDataPenalties() {
         }
     }
     if (ret == false) {
-        alert("No apostrophe(') in text box. Just remove them.\n" + errStr);
+        alert("No apostrophe(') in text box. Please remove them.\n" + errStr);
     }
     return ret
 }
