@@ -170,16 +170,10 @@ var config_data = `
         },
 		"defaultValue":"1"
       },
-	"Hoarding": {
+	"# of Cargo Hoarded": {
 	  "code":"hd",
 	  "title":"Hoarding",
-	  "type":"radio",
-	  "choices":{
-	    "1":"1<br>",
-            "2":"2<br>",
-            "3":"3"
-	},
-		"defaultValue":"1"
+	  "type":"counter"
       },
 	"Intake Speed": {
 	  "code":"is",
