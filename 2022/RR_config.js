@@ -57,7 +57,7 @@ var config_data = `
           "rfi":"Round 5<br>",
 	  "f":"Finals"
         },
-        "defaultValue":"qm",
+        "defaultValue":"q",
         "required":"false"
       }
     },
