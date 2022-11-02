@@ -474,14 +474,18 @@ function resetRobot() {
 
 
 function getLevel(){
-    if(document.getElementById("input_l_qm").checked){
-        return "qm";
-    } else if(document.getElementById("input_l_ef").checked){
-        return "ef";
-    } else if(document.getElementById("input_l_qf").checked){
-        return "qf";
-    } else if(document.getElementById("input_l_sf").checked){
-        return "sf";
+    if(document.getElementById("input_l_q").checked){
+        return "q";
+    } else if(document.getElementById("input_l_ron").checked){
+        return "ron";
+    } else if(document.getElementById("input_l_rtw").checked){
+        return "rtw";
+    } else if(document.getElementById("input_l_rth").checked){
+        return "rth";
+    } else if(document.getElementById("input_l_rfo").checked){
+        return "rfo";
+    } else if(document.getElementById("input_l_rfi").checked){
+        return "rfi";
     } else if(document.getElementById("input_l_f").checked){
         return "f";
     } else {
@@ -490,10 +494,12 @@ function getLevel(){
 }
 
 function validateLevel() {
-    if (document.getElementById("input_l_qm").checked ||
-        document.getElementById("input_l_ef").checked ||
-        document.getElementById("input_l_qf").checked ||
-        document.getElementById("input_l_sf").checked ||
+    if (document.getElementById("input_l_q").checked ||
+        document.getElementById("input_l_ron").checked ||
+        document.getElementById("input_l_rtw").checked ||
+        document.getElementById("input_l_rth").checked ||
+        document.getElementById("input_l_rfo").checked ||
+        document.getElementById("input_l_rfi").checked ||
         document.getElementById("input_l_f").checked
     ) {
         return true
@@ -503,9 +509,13 @@ function validateLevel() {
 }
 
 function validatePosition() {
-    if (document.getElementById("input_l_qm").checked ||
-        document.getElementById("input_l_ef").checked ||
-        document.getElementById("input_l_qf").checked
+    if (document.getElementById("input_l_q").checked ||
+        document.getElementById("input_l_ron").checked ||
+        document.getElementById("input_l_rtw").checked ||
+        document.getElementById("input_l_rth").checked ||
+        document.getElementById("input_l_rfo").checked ||
+        document.getElementById("input_l_rfi").checked ||
+        document.getElementById("input_l_f").checked
     ) {
         return true
     } else {
