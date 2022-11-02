@@ -49,11 +49,12 @@ var config_data = `
         "code":"l",
         "type":"level",
         "choices":{
-          "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
+          "ron":"Round 1<br>",
+          "rtw":"Round 2<br>",
+          "rth":"Round 3<br>",
+          "rfo":"Round 4<br>",
+          "rfi":"Round 5<br>",
+	  "f":"Finals"
         },
         "defaultValue":"qm",
         "required":"false"
