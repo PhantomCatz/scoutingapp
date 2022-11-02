@@ -49,6 +49,7 @@ var config_data = `
         "code":"l",
         "type":"level",
         "choices":{
+	  "q":"Quals<br>",
           "ron":"Round 1<br>",
           "rtw":"Round 2<br>",
           "rth":"Round 3<br>",
